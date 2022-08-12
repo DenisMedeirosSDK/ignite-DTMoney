@@ -1,0 +1,36 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento de site",
+      "type": "income",
+      "category": "Venda",
+      "price": 14000,
+      "createdAt": "2022-08-11T16:26:35.067Z"
+    },
+    {
+      "id": 2,
+      "description": "Almoço",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 50,
+      "createdAt": "2022-08-11T16:30:35.067Z"
+    },
+    {
+      "id": 3,
+      "description": "Almoço",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 50,
+      "createdAt": "2022-08-11T16:30:35.067Z"
+    },
+    {
+      "category": "remedio",
+      "description": "Remedio",
+      "price": 500,
+      "type": "outcome",
+      "createdAt": "2022-08-11T19:03:37.168Z",
+      "id": 4
+    }
+  ]
+}

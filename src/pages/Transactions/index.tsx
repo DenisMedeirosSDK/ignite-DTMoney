@@ -1,13 +1,20 @@
-import { Header } from '../../components/Header';
-import { Summary } from '../../components/Summary';
-import { SearchForm } from './components/SearchForm';
+import { useContextSelector } from 'use-context-selector'
+import { Header } from '../../components/Header'
+import { Summary } from '../../components/Summary'
+import { TransactionsContext } from '../../contexts/TransactionsContext'
+import { dateFormatter, priceFormatter } from '../../utils/formatter'
+import { SearchForm } from './components/SearchForm'
 import {
   PriceHighlight,
   TransactionContainer,
   TrasactionsTable,
-} from './styles';
+} from './styles'
 
 export function Transactions() {
+  const transactions = useContextSelector(TransactionsContext, (ctx) => {
+    return ctx.transactions
+  })
+
   return (
     <div>
       <Header />
@@ -17,28 +24,26 @@ export function Transactions() {
         <SearchForm />
         <TrasactionsTable>
           <tbody>
-            <tr>
-              <td width="50%">Desenvolvimento de site</td>
-              <td>
-                <PriceHighlight variant="income">R$ 12.000,00</PriceHighlight>
-              </td>
-              <td>Venda</td>
-              <td>12/04/2022</td>
-            </tr>
-
-            <tr>
-              <td width="50%">Desenvolvimento de site</td>
-              <td>
-                <PriceHighlight variant="outcome">
-                  - R$ 12.000,00
-                </PriceHighlight>
-              </td>
-              <td>Venda</td>
-              <td>12/04/2022</td>
-            </tr>
+            {transactions.map((transaction) => {
+              return (
+                <tr key={transaction.id}>
+                  <td width="50%">{transaction.description}</td>
+                  <td>
+                    <PriceHighlight variant={transaction.type}>
+                      {transaction.type === 'outcome' && '- '}
+                      {priceFormatter.format(transaction.price)}
+                    </PriceHighlight>
+                  </td>
+                  <td>{transaction.category}</td>
+                  <td>
+                    {dateFormatter.format(new Date(transaction.createdAt))}
+                  </td>
+                </tr>
+              )
+            })}
           </tbody>
         </TrasactionsTable>
       </TransactionContainer>
     </div>
-  );
+  )
 }
