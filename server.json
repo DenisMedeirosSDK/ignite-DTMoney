@@ -5,32 +5,24 @@
       "description": "Desenvolvimento de site",
       "type": "income",
       "category": "Venda",
-      "price": 14000,
-      "createdAt": "2022-08-11T16:26:35.067Z"
+      "price": 2000,
+      "createdAt": "2022-09-11T16:26:35.067Z"
     },
     {
       "id": 2,
-      "description": "Almoço",
-      "type": "outcome",
-      "category": "Alimentação",
-      "price": 50,
-      "createdAt": "2022-08-11T16:30:35.067Z"
+      "description": "Desenvolvimento de site",
+      "type": "income",
+      "category": "Venda",
+      "price": 2000,
+      "createdAt": "2022-09-26T20:41:07.056Z"
     },
     {
       "id": 3,
-      "description": "Almoço",
+      "description": "RTX 3070",
       "type": "outcome",
-      "category": "Alimentação",
-      "price": 50,
-      "createdAt": "2022-08-11T16:30:35.067Z"
-    },
-    {
-      "category": "remedio",
-      "description": "Remedio",
-      "price": 500,
-      "type": "outcome",
-      "createdAt": "2022-08-11T19:03:37.168Z",
-      "id": 4
+      "category": "Pessoal",
+      "price": 3499,
+      "createdAt": "2022-09-30T20:41:07.056Z"
     }
   ]
 }
